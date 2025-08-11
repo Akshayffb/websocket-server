@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
+import { logError } from "../utils/logger";
 
 import { fyersModel } from "fyers-api-v3";
 
@@ -7,7 +8,7 @@ const appId = process.env.FYERS_APP_ID;
 const accessToken = process.env.FYERS_ACCESS_TOKEN;
 
 if (!appId || !accessToken) {
-  console.error(
+  logError(
     "Missing one or more required environment variables: FYERS_APP_ID, FYERS_ACCESS_TOKEN. Exiting application."
   );
   process.exit(1);

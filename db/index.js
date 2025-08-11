@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
+import { logError } from "../utils/logger";
 
 dotenv.config();
 
@@ -16,10 +17,9 @@ const pool = mysql.createPool({
 
 try {
   const connection = await pool.getConnection();
-  console.log("Connected to MySql via pool");
   connection.release();
 } catch (err) {
-  console.log("Mysql connection failed: ", err.message);
+  logError("Mysql connection failed: ", err.message);
 }
 
 export default pool;
