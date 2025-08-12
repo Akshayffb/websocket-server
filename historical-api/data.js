@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
-import { logError } from "../utils/logger";
+import { logError } from "../utils/logger.js";
 
 import { fyersModel } from "fyers-api-v3";
 

@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
-import { logError } from "../utils/logger";
+import { logError } from "../utils/logger.js";
 
 dotenv.config();
 
